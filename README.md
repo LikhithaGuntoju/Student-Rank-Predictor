@@ -59,5 +59,19 @@ Homepage:
 Predicted Rank Display:
     -Displays the calculated rank after processing the data.
 Sample Screenshot:
-![Screenshot 2025-02-02 133858](https://github.com/user-attachments/assets/4bad8a33-829e-4a3b-9667-f89196773e2a)
+![image](https://github.com/user-attachments/assets/379cbe25-ad54-4830-8395-9ddbf1613d8f)
+
+
+## Future Enhancements
+- Integrate Machine Learning models for more accurate rank predictions.
+- Improve UI/UX with advanced data visualization.
+- Add user authentication for personalized dashboards.
+
+## Contributors
+- Likhitha Sri Guntoju
+
+## License
+This project is licensed under the MIT License.
+
+
 
