@@ -1,21 +1,28 @@
 # Student Rank Predictor
 ## Project Overview
 This project predicts a student's rank based on their quiz scores. It uses historical quiz data and the most recent quiz data to estimate the student's rank. The application consists of a Spring Boot backend that fetches quiz data from external APIs and performs calculations to predict the rank. The frontend is a simple web page where the user can input their ID to get a predicted rank.
-## Approach
-1. Backend (Spring Boot):
-    - The backend is built using Spring Boot and contains two key services:
-        - HistoricalDataService: Fetches historical quiz data for a given user.
-        - QuizDataService: Fetches the most recent quiz data for the user.
-    - The backend exposes an API (/api/predict-rank) which takes a user ID as input and returns the predicted rank based on an improvement factor calculated using past quiz scores.
-2. Frontend (HTML, CSS, JavaScript):
-   - The frontend consists of a simple HTML form where users can input their ID and click a button to fetch their predicted rank.
-    - The results are displayed dynamically using JavaScript after fetching data from the backend API.
+
+## Features
+- Fetch and analyze quiz performance data (latest and historical quizzes)
+- Identify weak areas and improvement trends
+- Predict student NEET rank based on performance patterns
+- User-friendly interface for rank prediction
+- Fetch and analyze quiz performance data (latest and historical quizzes)
+- Identify weak areas and improvement trends
+- Predict student NEET rank based on performance patterns
+- User-friendly interface for rank prediction
+- Backend: Spring Boot (Java), REST API, Spring REST Template
+- Frontend: HTML, CSS, JavaScript
+- Database/API Sources: External APIs for fetching quiz data
+- Tools & Libraries: Maven, Lombok, Eclipse/IntelliJ
+   
 ## Setup Instructions
 Prerequisites
 - Java 17 or later (for Spring Boot)
-- Maven (for building the project)
-- Node.js and npm (for frontend, if needed)
-## Steps for Backend Setup
+- Maven
+- An IDE (Eclipse, IntelliJ, or VS Code)
+  
+## Steps to Run the Project
 1. Clone the repository:
     ```bash
     git clone <repository-url>
@@ -27,9 +34,30 @@ Prerequisites
    ```bash
    mvn spring-boot:run
 4. The application will be running on http://localhost:8080. You can access the rank prediction API by making a GET request to /api/predict-rank?userId=<userId>.
-## Steps for Frontend Setup
-1. Open the index.html file in a browser. If you're using any build tools for the frontend (like Webpack or a simple local server), follow their setup instructions to serve the HTML.
 
-2. When you input a User ID and click "Predict My Rank," the frontend will call the backend API to get the predicted rank and display it on the page.
-## Key Visualizations
-    - Predicted Rank Display: After entering a valid User ID, the predicted rank will be shown in an <h2> element.
+## API Endpoints
+- Fetch Current Quiz Data: GET /api/quiz?userId={userId}
+- Fetch Historical Quiz Data: GET /api/history?userId={userId}
+- Predict Student Rank: GET /api/predict-rank?userId={userId}
+  
+## Approach Description
+1. Data Collection & Processing
+    - The system fetches current and historical quiz data using external APIs.
+    - The current quiz contains the user's most recent quiz submission.
+    - The historical data includes the last five quiz scores for each student.
+2. Data Analysis & Insights Generation
+   - The rank prediction is based on an improvement factor, calculated by comparing the user's most recent quiz score with their average historical quiz score. A higher improvement factor generally leads to a better rank prediction.
+    - The predicted rank is returned as an integer, where the lower the number, the better the rank (e.g., 1 is the best).
+3. Rank Prediction Algorithm
+    - Calculates an average score from past quizzes.
+    - Compares it with the latest quiz performance.
+    - Uses a probabilistic model to estimate the NEET rank, based on score improvements and past exam data.
+
+## UI Overview & Screenshots
+Homepage:
+    - Users enter their User ID and click "Predict My Rank".
+Predicted Rank Display:
+    -Displays the calculated rank after processing the data.
+Sample Screenshot:
+![Screenshot 2025-02-02 133858](https://github.com/user-attachments/assets/4bad8a33-829e-4a3b-9667-f89196773e2a)
+
