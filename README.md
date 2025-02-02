@@ -20,4 +20,16 @@ Prerequisites
     ```bash
     git clone <repository-url>
     cd <project-directory>
+2. Navigate to the project directory and build the backend using Maven:
+    ```bash
+    mvn clean install
+3. Run the Spring Boot application:
+   ```bash
+   mvn spring-boot:run
+4. The application will be running on http://localhost:8080. You can access the rank prediction API by making a GET request to /api/predict-rank?userId=<userId>.
+## Steps for Frontend Setup
+1. Open the index.html file in a browser. If you're using any build tools for the frontend (like Webpack or a simple local server), follow their setup instructions to serve the HTML.
 
+2. When you input a User ID and click "Predict My Rank," the frontend will call the backend API to get the predicted rank and display it on the page.
+## Key Visualizations
+    - Predicted Rank Display: After entering a valid User ID, the predicted rank will be shown in an <h2> element.
