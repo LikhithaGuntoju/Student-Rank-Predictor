@@ -17,6 +17,7 @@ Prerequisites
 - Node.js and npm (for frontend, if needed)
 ## Steps for Backend Setup
 1. Clone the repository:
-    ''sh git clone <repository-url>
-cd <project-directory>
+    ```bash
+    git clone <repository-url>
+    cd <project-directory>
 
